@@ -6,7 +6,7 @@
 //
 //////////
 var https = require('https');
-var apiKey = 'not public'
+var apiKey = '8CwpHFmEngVsKou3F1HN6h4pTI9OjCB6yZn6vzFo'
 
 
 //Prints and returns today's lunch menu
@@ -21,7 +21,6 @@ var todaysLunch = function(){
     'headers': {
     }
   };
-
   var promise = new Promise(function(resolve, reject){
     var req = https.request(options, function (res) {
       var chunks = [];
@@ -32,6 +31,8 @@ var todaysLunch = function(){
         var body = Buffer.concat(chunks);
         console.log(body.toString());
         var menu = body.toString()
+
+        console.log("asdfakewfluaiwehflawuefhalewuf")
         resolve(menu)
       });
       res.on("error", function (error) {
@@ -41,7 +42,8 @@ var todaysLunch = function(){
       req.end();
     });
   })
-  promise.then(function(result){
+  console.log('awelurihvalwiuer a')
+  return promise.then(function(result){
     console.log("hello")
     return result
   }, function(err){
