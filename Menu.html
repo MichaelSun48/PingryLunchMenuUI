@@ -65,17 +65,19 @@
             margin: auto 10% auto 17%;
             position: relative;
         }
-        blockquote p{
-            color: transparent;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-image: linear-gradient(to left, #777dff 33%, #f154ff 66%, #f0357c),linear-gradient(to right, #777dff 33%, #497ce2 66%, #37bdde );
-        }
+
+            blockquote p {
+                color: transparent;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-image: linear-gradient(to left, #777dff 33%, #f154ff 66%, #f0357c),linear-gradient(to right, #777dff 33%, #497ce2 66%, #37bdde );
+            }
+
         .row.content {
             height: 160em;
         }
 
-        .center{
+        .center {
             text-align: center;
         }
 
@@ -86,10 +88,11 @@
             padding-left: 2em;
             /*background-image: linear-gradient(rgba(156,39,176,.2),#fff);*/
         }
-        .well p{
-            margin-bottom: initial;
-            font-size: 1em;
-        }
+
+            .well p {
+                margin-bottom: initial;
+                font-size: 1em;
+            }
 
         .c-tabs-content__content, .c-tabs-content__label {
             color: #1f1f20;
@@ -117,7 +120,7 @@
             overflow-x: hidden;
         }
 
-        .shiftL{
+        .shiftL {
             position: relative;
             left: 17%;
         }
@@ -136,6 +139,16 @@
             flex-direction: row;
         }
 
+        .drop{
+            background-color: transparent;
+            border: none;
+            color: black;
+        }
+
+        .dropdown-menu li{
+           margin: 10px 6px 10px 6px;
+        }
+
         .spacer {
             margin-top: 7vh;
         }
@@ -149,20 +162,33 @@
     <div class="container-fluid">
         <div class="row content">
             <div class="col-sm-3 sidenav hidden-xs">
-                <div class="row-2"> <a href="https://www.pingry.org/" target="_blank"><h1><b>Pingry</b></h1></a> <a href="http://www.sagedining.com/menus/pingry" target="_blank"><i class="fas fa-utensils"></i></a></div>
-                <ul class="nav nav-pills nav-stacked">
-                    <li id="0"><a class="sides" href="#section1">Lunch</a></li>
-                    <li id="1"><a href="#section2" class="sides">Lunch (static)</a></li>
-                    <li id="2"><a href="#section3" class="sides">Breakfast</a></li>
-                    <!--<li id="3"><a href="#section4" class="sides">Cupcakes</a></li>-->
-                </ul>
-                <br /> <br /> <br /> <br />
-                <time class="icon" style="margin: auto;">
-                    <em>Saturday</em>
-                    <span>16</span>
-                    <strong>February</strong>
-                </time>
-            </div>
+                <div class="row-2">
+                    <!--<a href="https://www.pingry.org/" target="_blank"><h1><b>Pingry</b></h1></a> <a href="http://www.sagedining.com/menus/pingry" target="_blank"><i class="fas fa-utensils"></i></a>-->
+                    <div class="dropdown">
+                        <button class=" dropdown-toggle drop" type="button" data-toggle="dropdown">
+                            <h1 style="display: inline;"><b>Pingry</b></h1><i class="fas fa-utensils"></i>
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="https://www.pingry.org/" target="_blank">Pingry Website</a></li>
+                            <li><a href="http://www.sagedining.com/menus/pingry" target="_blank">Legacy Menu</a></li>
+                            <li>Contact: cgu2022@pingry.org</li>
+                        </ul>
+                    </div>
+                </div>
+                    <ul class="nav nav-pills nav-stacked">
+                        <li id="0"><a class="sides" href="#section1">Lunch</a></li>
+                        <li id="1"><a href="#section2" class="sides">Lunch (static)</a></li>
+                        <li id="2"><a href="#section3" class="sides">Breakfast</a></li>
+                        <!--<li id="3"><a href="#section4" class="sides">Cupcakes</a></li>-->
+                    </ul>
+                    <br /> <br /> <br /> <br />
+                    <time class="icon" style="margin: auto;">
+                        <em>Saturday</em>
+                        <span>16</span>
+                        <strong>February</strong>
+                    </time>
+                </div>
 
             <div class="jumbotron">
                 <h1>Pingry Menu</h1>
@@ -390,6 +416,7 @@
                         </div>
                     </div>
                 </div> <!--End of shiftL-->
+            </div>
     </div>
     <blockquote class="spacer spacer-bot">
         <p>Our success starts with our incredibly talented and committed team of employees. <br /> We cultivate that talent – providing extensive training in food safety, allergen awareness, preventing eating disorders, and more. </p>
