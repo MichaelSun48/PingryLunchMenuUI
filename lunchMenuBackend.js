@@ -17,37 +17,37 @@ var todaysLunch = function(){
     'method': 'GET',
     'host': 'pingrytoday.pingry.org',
     'port': '3001',
-    'path': '/v1/lunch?api_key='+apiKey+'&date=' + formatTodaysDate(),
+    'path': '/v1/lunch?api_key='+apiKey+'&date='+formatTodaysDate(),
     'headers': {
     }
   };
-  var promise = new Promise(function(resolve, reject){
-    var req = https.request(options, function (res) {
+
+  let promise = new Promise((resolve, reject) => {
+    var req = https.request(options, (res) => {
+      console.log("REQ start")
       var chunks = [];
-      res.on("data", function (chunk) {
+      res.on("data", (chunk) => {
         chunks.push(chunk);
       });
-      res.on("end", function (chunk) {
+      res.on("end", (chunk) => {
         var body = Buffer.concat(chunks);
         console.log(body.toString());
         var menu = body.toString()
-
-        console.log("asdfakewfluaiwehflawuefhalewuf")
         resolve(menu)
       });
-      res.on("error", function (error) {
+      res.on("error", (error) => {
         console.error(error);
         reject(error)
       });
-      req.end();
     });
+    req.end();
   })
-  console.log('awelurihvalwiuer a')
-  return promise.then(function(result){
+
+  return promise.then((result) => {
     console.log("hello")
     return result
-  }, function(err){
-    return err
+  }).catch( (error) => {
+    return "Error requesting lunch menu: " + error
   })
 
 }
@@ -65,20 +65,22 @@ var lunchByDate = function(date){
   };
   var req = https.request(options, function (res) {
     var chunks = [];
-    res.on("data", function (chunk) {
+    res.on("data", function (chunk){
       chunks.push(chunk);
     });
     res.on("end", function (chunk) {
       var body = Buffer.concat(chunks);
       console.log(body.toString());
-      return body.toString()
+      return body.toString();
     });
     res.on("error", function (error) {
+      console.log("EROEOIREOR")
       console.error(error);
     });
   });
   req.end();
 }
+
 //Properly formats today's date in this format: "YYYYMMDD"
 var formatTodaysDate = function(){
   var date = new Date();
@@ -107,5 +109,6 @@ var formatLunchMenu = function(lunchMenu){
   var soups = lunchMenu[0]
   console.log(soups)
 }
-
-console.log(todaysLunch())
+console.log("START")
+console.log(todaysLunch().then((result)=>{console.log(result)}))
+console.log("END")
