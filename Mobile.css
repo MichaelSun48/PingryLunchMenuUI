@@ -1,0 +1,82 @@
+﻿#jumbo {
+        border-radius: 5px;
+        margin-left: 0%;
+        padding-right: 15px;
+        width: 100vw;
+    }
+
+#quote{
+    position: relative;
+    top: 0%;
+}
+
+.sidenav{
+    display: none;
+}
+
+.navbar {
+    height: 7vh;
+    background: linear-gradient(to right, #2980b9, #6dd5fa, #ffffff);
+}
+
+.jumbotron
+{
+    margin-top: 7vh;
+}
+
+.jumbotron h1 {
+    color: #2adb20;
+}
+
+.jumbotron p {
+    color: #2adb20;
+}
+
+#quote{
+    display: block;
+}
+
+#quote2 {
+    display: none;
+}
+
+blockquote {
+    background: linear-gradient(to right,#fce4ed,#ffe8cc);
+    margin: auto 10% 100px 10%;
+    position: relative;
+}
+
+    blockquote p {
+        color: transparent;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-image: linear-gradient(to left, #777dff 33%, #f154ff 66%, #f0357c),linear-gradient(to right, #777dff 33%, #497ce2 66%, #37bdde );
+    }
+
+
+.spacer {
+    margin-top: 30%;
+}
+.spacer2 {
+    margin-top: 30%;
+}
+.spacer-bot {
+    margin-bottom: 20vh;
+}
+
+    .shiftL {
+        position: relative;
+        left: 0%;
+    }
+
+    .sidenav {
+        background-image: linear-gradient(DodgerBlue,rgba(156,39,176,.2));
+        /*background-color:DodgerBlue;*/
+        height: 100%;
+        width: 0%;
+        display: none;
+    }
+
+#tops {
+    display: initial;
+}

@@ -1,0 +1,166 @@
+﻿/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+body ::selection {
+    color: red;
+    background-color: none;
+}
+
+html {
+    /*height: 300vh;*/
+    scroll-behavior: smooth;
+    width: 100%;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    /*background: linear-gradient(to left, #f58583, #ab67a2 47%, #5f54a2);*/
+}
+
+a {
+    color: black;
+    transition: .3s;
+    text-decoration: none;
+}
+
+    a:link {
+        text-decoration: none;
+    }
+
+    a:visited {
+        text-decoration: none;
+    }
+
+
+    a:hover {
+        transition: .3s;
+        color: aqua;
+    }
+
+i {
+    margin: 2vh;
+    font-size: 3em;
+}
+
+h1, h2, h4 {
+    color: black;
+    margin-bottom: 1vh;
+}
+
+blockquote {
+    background: linear-gradient(to right,#fce4ed,#ffe8cc);
+    margin: auto 10% auto 17%;
+    position: relative;
+}
+
+    blockquote p {
+        color: transparent;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-image: linear-gradient(to left, #777dff 33%, #f154ff 66%, #f0357c),linear-gradient(to right, #777dff 33%, #497ce2 66%, #37bdde );
+    }
+
+.row.content {
+    height: 175em;
+}
+
+.center {
+    text-align: center;
+}
+
+.well {
+    background-image: -webkit-linear-gradient(top,#f5f5f5,#f1f1f1);
+    padding-top: 14px;
+    padding-bottom: 26px;
+    padding-left: 2em;
+    /*background-image: linear-gradient(rgba(156,39,176,.2),#fff);*/
+}
+
+    .well p {
+        margin-bottom: initial;
+        font-size: 1em;
+    }
+
+.c-tabs-content__content, .c-tabs-content__label {
+    color: #1f1f20;
+    font-family: Roboto,Helvetica,Arial,sans-serif;
+    font-weight: 300
+}
+
+.c-tabs-content__content {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin: 0 0 10px
+}
+
+.sidenav {
+    background-image: linear-gradient(DodgerBlue,rgba(156,39,176,.2));
+    /*background-color:DodgerBlue;*/
+    height: 100%;
+    width: 14%;
+    margin-right: 3vh;
+    height: 100%;
+    position: fixed;
+    /*z-index: 1;
+            top: 0;
+            left: 0;*/
+    overflow-x: hidden;
+}
+
+.shiftL {
+    position: relative;
+    left: 17%;
+}
+
+.sides {
+    color: azure;
+}
+
+.jumbotron {
+    border-radius: 5px;
+    margin-left: 14%;
+}
+
+    .jumbotron h1 {
+        color: green;
+    }
+
+    .jumbotron p {
+        color: green;
+    }
+
+.headings {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    margin: 0px auto 0px auto;
+}
+
+.row-2 {
+    display: flex;
+    flex-direction: row;
+}
+
+.drop {
+    background-color: transparent;
+    border: none;
+    color: black;
+}
+
+.dropdown-menu li {
+    margin: 10px 6px 10px 6px;
+}
+
+.spacer {
+    margin-top: 7vh;
+}
+
+.spacer-bot {
+    margin-bottom: 4vh;
+}
+
+#quote {
+    display: none;
+}
+
+#tops{
+    display: none;
+}
