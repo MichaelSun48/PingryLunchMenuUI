@@ -6,12 +6,11 @@
 //
 //////////
 var https = require('https');
-var apiKey = '8CwpHFmEngVsKou3F1HN6h4pTI9OjCB6yZn6vzFo'
+var apiKey = ''
 
 
 //Prints and returns today's lunch menu
 var todaysLunch = function(){
-  console.log("adsf")
   var options = {
     "rejectUnauthorized": false, //Added this because it wouldn't work otherwise... not sure if this is secure
     'method': 'GET',
@@ -24,16 +23,14 @@ var todaysLunch = function(){
 
   let promise = new Promise((resolve, reject) => {
     var req = https.request(options, (res) => {
-      console.log("REQ start")
       var chunks = [];
       res.on("data", (chunk) => {
         chunks.push(chunk);
       });
       res.on("end", (chunk) => {
         var body = Buffer.concat(chunks);
-        console.log(body.toString());
         var menu = body.toString()
-        resolve(menu)
+        resolve(JSON.parse(menu))
       });
       res.on("error", (error) => {
         console.error(error);
@@ -44,7 +41,6 @@ var todaysLunch = function(){
   })
 
   return promise.then((result) => {
-    console.log("hello")
     return result
   }).catch( (error) => {
     return "Error requesting lunch menu: " + error
@@ -52,7 +48,7 @@ var todaysLunch = function(){
 
 }
 
-//Prints and returns the given date's (YYYYMMDD) lunch
+//Prints and returns the given date's lunch (Date must be in the following format: YYYYMMDD)
 var lunchByDate = function(date){
   var options = {
     "rejectUnauthorized": false, //Added this because it wouldn't work otherwise... not sure if this is secure
@@ -63,25 +59,27 @@ var lunchByDate = function(date){
     'headers': {
     }
   };
-  var req = https.request(options, function (res) {
-    var chunks = [];
-    res.on("data", function (chunk){
-      chunks.push(chunk);
+  let promise = new Promise((resolve, reject) => {
+    var req = https.request(options, (res) => {
+      var chunks = [];
+      res.on("data", (chunk) => {
+        chunks.push(chunk);
+      });
+      res.on("end", (chunk) => {
+        var body = Buffer.concat(chunks);
+        var menu = body.toString()
+        resolve(JSON.parse(menu))
+      });
+      res.on("error", (error) => {
+        console.error(error);
+        reject(error)
+      });
     });
-    res.on("end", function (chunk) {
-      var body = Buffer.concat(chunks);
-      console.log(body.toString());
-      return body.toString();
-    });
-    res.on("error", function (error) {
-      console.log("EROEOIREOR")
-      console.error(error);
-    });
-  });
-  req.end();
+    req.end();
+  })
 }
 
-//Properly formats today's date in this format: "YYYYMMDD"
+//Properly formats today's date in this format: "YYYYMMDD" (ignore this function)
 var formatTodaysDate = function(){
   var date = new Date();
   var today = date.getFullYear().toString()
@@ -99,16 +97,51 @@ var formatTodaysDate = function(){
   }
   return today;
 }
-
-
-
+console.log(formatTodaysDate())
 
 //Formats the lunch menu nicely. Takes in 4D array from lunchByDate() or todaysLunch()
 var formatLunchMenu = function(lunchMenu){
   console.log(lunchMenu)
   var soups = lunchMenu[0]
+  var saladbar = lunchMenu[1]
+  var hotLunch = lunchMenu[2].concat(lunchMenu[3]) //I'm pretty sure both of these are hot lunch but I might be wrong
+  var rightStation = lunchMenu[4]
+  var leftStation = lunchMenu[5]
+  var pasta = lunchMenu[6]
+  var breakfast = lunchMenu[7]
+
+  console.log("----------------------------")
+  console.log("SOUPS:")
   console.log(soups)
+  console.log("----------------------------")
+  console.log("SALAD BAR ITEMS:")
+  console.log(saladbar)
+  console.log("----------------------------")
+  console.log("HOT LUNCH:")
+  console.log(hotLunch)
+  console.log("----------------------------")
+  console.log("THE RIGHT STATION THAT EVERYONE GOES TO THAT I CANT REMEMBER THE NAME OF:")
+  console.log(rightStation)
+  console.log("----------------------------")
+  console.log("THE LEFT STATION THAT EVERYONE GOES TO THAT I CANT REMEMBER THE NAME OF:")
+  console.log(leftStation)
+  console.log("----------------------------")
+  console.log("PASTA:")
+  console.log(pasta)
+  console.log("----------------------------")
+  console.log("BREAKFAST:")
+  console.log(breakfast)
+  console.log("----------------------------")
+
+  fullMenu = [breakfast, soups, hotLunch, rightStation, leftStation, saladbar]
+
+  return fullMenu
 }
-console.log("START")
-console.log(todaysLunch().then((result)=>{console.log(result)}))
-console.log("END")
+var getTodaysMenu = () =>{
+  todaysLunch().then((result)=>{
+    var fullMenu = formatLunchMenu(result)
+    return fullMenu
+  });
+}
+
+getTodaysMenu()
