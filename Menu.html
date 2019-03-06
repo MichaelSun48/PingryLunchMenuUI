@@ -1,0 +1,434 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Menu.UI</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Calender.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="lm.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="shortcut icon" href="imgs/faviconf.ico" type="image/icon">
+    <link rel="icon" href="imgs/faviconf.ico" type="image/icon">
+    <style>
+        /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+        body ::selection {
+            color: red;
+            background-color: none;
+        }
+
+        html {
+            /*height: 300vh;*/
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            /*background: linear-gradient(to left, #f58583, #ab67a2 47%, #5f54a2);*/
+        }
+
+        a {
+            color: black;
+            transition: .3s;
+            text-decoration: none;
+        }
+
+            a:link {
+                text-decoration: none;
+            }
+
+            a:visited {
+                text-decoration: none;
+            }
+
+
+            a:hover {
+                transition: .3s;
+                color: aqua;
+            }
+
+        i {
+            margin: 2vh;
+            font-size: 3em;
+        }
+
+        h1, h2, h4 {
+            color: black;
+            margin-bottom: 1vh;
+        }
+
+        blockquote {
+            background: linear-gradient(to right,#fce4ed,#ffe8cc);
+            margin: auto 10% auto 17%;
+            position: relative;
+        }
+
+            blockquote p {
+                color: transparent;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-image: linear-gradient(to left, #777dff 33%, #f154ff 66%, #f0357c),linear-gradient(to right, #777dff 33%, #497ce2 66%, #37bdde );
+            }
+
+        .row.content {
+            height: 160em;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .well {
+            background-image: -webkit-linear-gradient(top,#f5f5f5,#f1f1f1);
+            padding-top: 14px;
+            padding-bottom: 26px;
+            padding-left: 2em;
+            /*background-image: linear-gradient(rgba(156,39,176,.2),#fff);*/
+        }
+
+            .well p {
+                margin-bottom: initial;
+                font-size: 1em;
+            }
+
+        .c-tabs-content__content, .c-tabs-content__label {
+            color: #1f1f20;
+            font-family: Roboto,Helvetica,Arial,sans-serif;
+            font-weight: 300
+        }
+
+        .c-tabs-content__content {
+            font-size: 1rem;
+            line-height: 1.5rem;
+            margin: 0 0 10px
+        }
+
+        .sidenav {
+            background-image: linear-gradient(DodgerBlue,rgba(156,39,176,.2));
+            /*background-color:DodgerBlue;*/
+            height: 100%;
+            width: 14%;
+            margin-right: 3vh;
+            height: 100%;
+            position: fixed;
+            /*z-index: 1;
+            top: 0;
+            left: 0;*/
+            overflow-x: hidden;
+        }
+
+        .shiftL {
+            position: relative;
+            left: 17%;
+        }
+
+        .sides {
+            color: azure;
+        }
+
+        .jumbotron {
+            border-radius: 5px;
+            margin-left: 14%;
+        }
+
+        .row-2 {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .drop{
+            background-color: transparent;
+            border: none;
+            color: black;
+        }
+
+        .dropdown-menu li{
+           margin: 10px 6px 10px 6px;
+        }
+
+        .spacer {
+            margin-top: 7vh;
+        }
+
+        .spacer-bot {
+            margin-bottom: 4vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-3 sidenav hidden-xs">
+                <div class="row-2">
+                    <!--<a href="https://www.pingry.org/" target="_blank"><h1><b>Pingry</b></h1></a> <a href="http://www.sagedining.com/menus/pingry" target="_blank"><i class="fas fa-utensils"></i></a>-->
+                    <div class="dropdown">
+                        <button class=" dropdown-toggle drop" type="button" data-toggle="dropdown">
+                            <h1 style="display: inline;"><b>Pingry</b></h1><i class="fas fa-utensils"></i>
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="https://www.pingry.org/" target="_blank">Pingry Website</a></li>
+                            <li><a href="http://www.sagedining.com/menus/pingry" target="_blank">Legacy Menu</a></li>
+                            <li><a href="https://www.sagedining.com/" target="_blank">Sage Website</a></li>
+                            <!--<li>Contact: cgu2022@pingry.org</li>-->
+                        </ul>
+                    </div>
+                </div>
+                    <ul class="nav nav-pills nav-stacked">
+                        <li id="0"><a class="sides" href="#section1">Lunch</a></li>
+                        <li id="1"><a href="#section2" class="sides">Lunch (static)</a></li>
+                        <li id="2"><a href="#section3" class="sides">Breakfast</a></li>
+                        <!--<li id="3"><a href="#section4" class="sides">Cupcakes</a></li>-->
+                    </ul>
+                    <br /> <br /> <br /> <br />
+                    <time class="icon" style="margin: auto;">
+                        <em>Saturday</em>
+                        <span>16</span>
+                        <strong>February</strong>
+                    </time>
+                </div>
+
+            <div class="jumbotron">
+                <h1>Pingry Menu</h1>
+                <p>At Pingry, the collaborative pursuit of excellence and honor are integral to every aspect of our programming, inside the classroom and out.</p>
+            </div>
+            <div class="shiftL">
+                <div class="col-sm-9" id="section1">
+                    <div class="well center">
+                        <h2>Main Stuff:</h2>
+                        <p>Cheese Pizza</p>
+                        <p>Pepperoni Pizza</p>
+                        <p>Pizza Toppings Bar</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="well">
+                                <h2>Main Ingredient:</h2>
+                                <p>Chicken Marsala</p>
+                                <p>Parmasan Risotto</p>
+                                <p>Simple Steamed Brocoli</p>
+                                <p>Grilled Asparagus with Sauteed Carrots</p>
+                                <p>Baked Rosemary Yukon & Sweet Potato Wedges</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="well">
+                                <h2>Secondary Stuff:</h2>
+                                <p>Seasoned Jasmine Rice</p>
+                                <p>Rice Toppings Bar</p>
+                                <br />
+                                <br />
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="well">
+                                <h4>Pasta</h4>
+                                <p>SAGE-Made Marinara Sauce</p>
+                                <p>SAGE-Made Bolognese Sauce</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="well">
+                                <h4>Soups</h4>
+                                <p>Chicken Noodle Soup</p>
+                                <p>Mushroom Soup</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="well">
+                                <h4>Panini</h4>
+                                <p>Balsamic Caprese Pesto Panini</p>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="well">
+                                <h4>Deli</h4>
+                                <p>Bone-in Roasted Turkey Breast</p>
+                                <p>Bologna</p>
+                                <p>Checken & Black Bean Salad with Fresh Cilantro</p>
+                                <p>House made Lemon Hummus</p>
+                                <br />
+                                <br />
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="well">
+                                <h4>Salad</h4>
+                                <p>Build-Your-Own Greek Salad</p>
+                                <p>Farro, Cord, & Arugula Salad</p>
+                                <p>Garlic, Basil, & Chile Tofu Salad</p>
+                                <p>Cucumber & Tuna Salad</p>
+                                <p>Oranges</p>
+                                <p>Honeydew</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="well">
+                                <h2>Desert:</h2>
+                                <p>Cookies</p>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="col-sm-9 spacer" id="section2">
+                        <div class="well">
+                            <h4>Dashboard</h4>
+                            <p>Some text..</p>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="well">
+                                    <h4>Users</h4>
+                                    <p>1 Million</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="well">
+                                    <h4>Pages</h4>
+                                    <p>100 Million</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="well">
+                                    <h4>Sessions</h4>
+                                    <p>10 Million</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="well">
+                                    <h4>Bounce</h4>
+                                    <p>30%</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="well">
+                                    <p>Text</p>
+                                    <p>Text</p>
+                                    <p>Text</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="well">
+                                    <p>Text</p>
+                                    <p>Text</p>
+                                    <p>Text</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="well">
+                                    <p>Text</p>
+                                    <p>Text</p>
+                                    <p>Text</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <div class="well">
+                                    <p>Text</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="well">
+                                    <p>Text</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-9 spacer" id="section3">
+                        <div class="well">
+                            <h4>Dashboard</h4>
+                            <p>Some text..</p>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="well">
+                                    <h4>Users</h4>
+                                    <p>1 Million</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="well">
+                                    <h4>Pages</h4>
+                                    <p>100 Million</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="well">
+                                    <h4>Sessions</h4>
+                                    <p>10 Million</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="well">
+                                    <h4>Bounce</h4>
+                                    <p>30%</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="well">
+                                    <p>Text</p>
+                                    <p>Text</p>
+                                    <p>Text</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="well">
+                                    <p>Text</p>
+                                    <p>Text</p>
+                                    <p>Text</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="well">
+                                    <p>Text</p>
+                                    <p>Text</p>
+                                    <p>Text</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <div class="well">
+                                    <p>Text</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="well">
+                                    <p>Text</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!--End of shiftL-->
+            </div>
+    </div>
+    <blockquote class="spacer spacer-bot">
+        <p>Our success starts with our incredibly talented and committed team of employees. <br /> We cultivate that talent – providing extensive training in food safety, allergen awareness, preventing eating disorders, and more. </p>
+        <footer>Sage Dining</footer>
+    </blockquote>
+    <script>
+        $(".nav li a").on("click", function () {
+            $(".nav li").removeClass("active");
+            $(this.id).addClass("active");
+        });
+
+    </script>
+</body>
+</html>
