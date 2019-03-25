@@ -10,6 +10,7 @@ html {
 }
 
 body {
+    overflow-x: hidden;
     font-family: 'Open Sans', sans-serif;
     margin: 0;
     /*background: linear-gradient(to left, #f58583, #ab67a2 47%, #5f54a2);*/
@@ -115,8 +116,11 @@ blockquote {
 }
 
 .jumbotron {
+    background-repeat: no-repeat;
     border-radius: 5px;
     margin-left: 14%;
+    background-size: cover;
+    background-image: url('imgs/background.athletics.jpg')
 }
 
     .jumbotron h1 {
