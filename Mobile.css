@@ -1,5 +1,5 @@
 ﻿html{
-    width: 100vw;
+    width: 100%;
 }
 
 #jumbo {
@@ -14,18 +14,23 @@
     top: 0%;
 }
 
+#pingry{
+    display: initial;
+    margin-left: 10%;
+}
+
 .sidenav{
     display: none;
 }
 
 .navbar {
-    height: 7vh;
-    background: linear-gradient(to right, #2980b9, #6dd5fa, #ffffff);
+    height: 10%;
+    background-image: linear-gradient(DodgerBlue,rgba(156,39,176,.2));
 }
 
 .jumbotron
 {
-    margin-top: 7vh;
+    /*margin-top: 7vh;*/
 }
 
 .jumbotron h1 {
