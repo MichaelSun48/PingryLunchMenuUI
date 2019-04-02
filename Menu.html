@@ -65,6 +65,7 @@
                         <h1 class="headings">Lunch (Daily):</h1>
                     </div>
                     <div class="col-sm-12">
+
                         <div class="well center">
                             <h2>Main Stuff:</h2>
                             <p>Cheese Pizza</p>
@@ -73,7 +74,7 @@
                         </div>
                         <div class="row">
                             <div class="col-sm-6">
-                                <div class="well">
+                                <div class="well"> 
                                     <h2>Main Ingredient:</h2>
                                     <p>Chicken Marsala</p>
                                     <p>Parmasan Risotto</p>
@@ -312,6 +313,17 @@
             $(this.id).addClass("active");
         });
 
+    </script>
+    <script>
+    var settings = {
+"url": "https://pingrytoday.pingry.org:3001/v1/lunch",
+"method": "GET",
+"timeout": 0,
+};
+
+$.ajax(settings).done(function (response) {
+console.log(response);
+});
     </script>
 </body>
 </html>

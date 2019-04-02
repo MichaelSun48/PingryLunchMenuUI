@@ -5,78 +5,65 @@
 // Last Updated:  1/14/19
 //
 //////////
-var https = require('https');
+// var url = 'https://pingrytoday.pingry.org:3001/v1/lunch?api_key=8CwpHFmEngVsKou3F1HN6h4pTI9OjCB6yZn6vzFo'
+// var https = require('https');
 var apiKey = '8CwpHFmEngVsKou3F1HN6h4pTI9OjCB6yZn6vzFo'
-
-
+var url = "https://pingrytoday.pingry.org:3001/v1/lunch?api_key=8CwpHFmEngVsKou3F1HN6h4pTI9OjCB6yZn6vzFo"
 //Prints and returns today's lunch menu
 var todaysLunch = function(){
-  var options = {
-    "rejectUnauthorized": false, //Added this because it wouldn't work otherwise... not sure if this is secure
-    'method': 'GET',
-    'host': 'pingrytoday.pingry.org',
-    'port': '3001',
-    'path': '/v1/lunch?api_key='+apiKey+'&date='+formatTodaysDate(),
-    'headers': {
-    }
-  };
-
-  let promise = new Promise((resolve, reject) => {
-    var req = https.request(options, (res) => {
-      var chunks = [];
-      res.on("data", (chunk) => {
-        chunks.push(chunk);
-      });
-      res.on("end", (chunk) => {
-        var body = Buffer.concat(chunks);
-        var menu = body.toString()
-        resolve(JSON.parse(menu))
-      });
-      res.on("error", (error) => {
-        console.error(error);
-        reject(error)
-      });
-    });
-    req.end();
-  })
-
-  return promise.then((result) => {
+  fetch("https://pingrytoday.pingry.org:3001/v1/lunch?api_key=8CwpHFmEngVsKou3F1HN6h4pTI9OjCB6yZn6vzFo").then(
+    (response) => response.json()
+  ).then(result => {
+    console.log("NOW")
+    console.log(result)
     return result
-  }).catch( (error) => {
-    return "Error requesting lunch menu: " + error
+  }).catch(ex => {
+    console.error(ex);
   })
 
+  // fetch("https://pingrytoday.pingry.org:3001/v1/lunch?api_key=8CwpHFmEngVsKou3F1HN6h4pTI9OjCB6yZn6vzFo").then((a)=>{console.log(a)})
 }
 
 //Prints and returns the given date's lunch (Date must be in the following format: YYYYMMDD)
 var lunchByDate = function(date){
-  var options = {
-    "rejectUnauthorized": false, //Added this because it wouldn't work otherwise... not sure if this is secure
-    'method': 'GET',
-    'host': 'pingrytoday.pingry.org',
-    'port': '3001',
-    'path': '/v1/lunch?api_key='+ apiKey +'&date=' + date,
-    'headers': {
-    }
-  };
-  let promise = new Promise((resolve, reject) => {
-    var req = https.request(options, (res) => {
-      var chunks = [];
-      res.on("data", (chunk) => {
-        chunks.push(chunk);
-      });
-      res.on("end", (chunk) => {
-        var body = Buffer.concat(chunks);
-        var menu = body.toString()
-        resolve(JSON.parse(menu))
-      });
-      res.on("error", (error) => {
-        console.error(error);
-        reject(error)
-      });
-    });
-    req.end();
-  })
+  // var options = {
+  //   "rejectUnauthorized": false, //Added this because it wouldn't work otherwise... not sure if this is secure
+  //   'method': 'GET',
+  //   'host': 'pingrytoday.pingry.org',
+  //   'port': '3001',
+  //   'path': '/v1/lunch?api_key='+ apiKey +'&date=' + date,
+  //   'headers': {
+  //   }
+  // };
+  // let promise = new Promise((resolve, reject) => {
+  //   var req = https.request(options, (res) => {
+  //     var chunks = [];
+  //     res.on("data", (chunk) => {
+  //       chunks.push(chunk);
+  //     });
+  //     res.on("end", (chunk) => {
+  //       var body = Buffer.concat(chunks);
+  //       var menu = body.toString()
+  //       resolve(JSON.parse(menu))
+  //     });
+  //     res.on("error", (error) => {
+  //       console.error(error);
+  //       reject(error)
+  //     });
+  //   });
+  //   req.end();
+  // })
+
+  urlByDate = url + '&date=' + date
+  var todaysLunch = function(){
+    fetch(urlByDate).then(
+      response => response.json()
+    ).then(result => {
+      return result
+    }).catch(ex => {
+      console.error(ex);
+    })
+  }
 }
 
 //Properly formats today's date in this format: "YYYYMMDD" (ignore this function)
@@ -137,11 +124,12 @@ var formatLunchMenu = function(lunchMenu){
 
   return fullMenu
 }
-var getTodaysMenu = () =>{
-  todaysLunch().then((result)=>{
-    var fullMenu = formatLunchMenu(result)
-    return fullMenu
-  });
-}
+console.log(todaysLunch())
+// var getTodaysMenu = () =>{
+//   todaysLunch().then((result)=>{
+//     var fullMenu = formatLunchMenu(result)
+//     return fullMenu
+//   });
+// }
 
-getTodaysMenu()
+// getTodaysMenu()
