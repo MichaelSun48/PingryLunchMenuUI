@@ -10,8 +10,9 @@ html {
 }
 
 body {
+    font-family: 'ABeeZee', sans-serif;
     overflow-x: hidden;
-    font-family: 'Open Sans', sans-serif;
+    /*font-family: 'Open Sans', sans-serif;*/
     margin: 0;
     /*background: linear-gradient(to left, #f58583, #ab67a2 47%, #5f54a2);*/
 }
@@ -51,6 +52,7 @@ blockquote {
     margin: auto 10% auto calc(17% + 15px);
     /*top: 70em;*/
     position: relative;
+    border-radius: 5px;
 }
 
     blockquote p {
@@ -61,10 +63,11 @@ blockquote {
     }
 
 #redyellow {
-    font-family: 'ABeeZee', sans-serif;
+    
     min-height: 100%;
     width: 100%;
     background-image: linear-gradient(to bottom right, rgba(255, 0, 0, 0.2), rgba(255,255,0, 0.2));
+    background-image: linear-gradient(to left, #f58583, #ab67a2 47%, #5f54a2);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
