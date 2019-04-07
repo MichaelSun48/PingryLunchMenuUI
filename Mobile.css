@@ -1,6 +1,13 @@
-﻿html{
-    width: 100%;
+﻿html {
+    min-height: 100%; /* make sure it is at least as tall as the viewport */
+    position: relative;
 }
+
+body {
+    height: 100%;
+}
+
+
 
 #jumbo {
         border-radius: 5px;
@@ -17,6 +24,10 @@
 #pingry{
     display: initial;
     margin-left: 10%;
+}
+
+.row.content {
+    height: 180em;
 }
 
 .sidenav{
@@ -50,9 +61,10 @@
 }
 
 blockquote {
-    background: linear-gradient(to right,#fce4ed,#ffe8cc);
+    background: linear-gradient(to right,#fce4ed,#ffe8cc), ;
     margin: auto 10% 100px 10%;
     position: relative;
+    border-radius: 5px;
 }
 
     blockquote p {

@@ -48,7 +48,8 @@ h1, h2, h4 {
 
 blockquote {
     background: linear-gradient(to right,#fce4ed,#ffe8cc);
-    margin: auto 10% auto 17%;
+    margin: auto 10% auto calc(17% + 15px);
+    /*top: 70em;*/
     position: relative;
 }
 
@@ -58,6 +59,30 @@ blockquote {
         -webkit-text-fill-color: transparent;
         background-image: linear-gradient(to left, #777dff 33%, #f154ff 66%, #f0357c),linear-gradient(to right, #777dff 33%, #497ce2 66%, #37bdde );
     }
+
+#redyellow {
+    font-family: 'ABeeZee', sans-serif;
+    min-height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to bottom right, rgba(255, 0, 0, 0.2), rgba(255,255,0, 0.2));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow: hidden;
+    z-index: -1;
+}
+
+h1.hed {
+    background: url(/imgs/gold.png);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+p.cursive {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5em;
+    font-weight: bold;
+}
 
 .row.content {
     height: 90em;
