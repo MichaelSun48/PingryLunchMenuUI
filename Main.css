@@ -74,9 +74,10 @@ blockquote {
 }
 
 h1.hed {
-    background: url(/imgs/gold.png);
+    background: url(imgs/gold2.jpg);
     -webkit-background-clip: text;
     color: transparent;
+    display: inline-block;
 }
 
 p.cursive {
@@ -94,7 +95,8 @@ p.cursive {
 }
 
 .well {
-    background-image: -webkit-linear-gradient(top,#f5f5f5,#f1f1f1);
+    /*background-image: -webkit-linear-gradient(top,#fAfAfA,#f1f1f1);*/
+    background-color: #fDfDfD;
     padding-top: 14px;
     padding-bottom: 26px;
     padding-left: 2em;
@@ -150,7 +152,7 @@ p.cursive {
 }
 
     .jumbotron h1 {
-        color: green;
+        /*color: green;*/
     }
 
     .jumbotron p {
