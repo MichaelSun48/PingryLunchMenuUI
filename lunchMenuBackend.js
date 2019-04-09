@@ -125,11 +125,11 @@ var formatLunchMenu = function(lunchMenu){
   return fullMenu
 }
 console.log(todaysLunch())
-// var getTodaysMenu = () =>{
-//   todaysLunch().then((result)=>{
-//     var fullMenu = formatLunchMenu(result)
-//     return fullMenu
-//   });
-// }
+ //var getTodaysMenu = () =>{
+ //  todaysLunch().then((result)=>{
+ //    var fullMenu = formatLunchMenu(result)
+ //    return fullMenu
+ //  });
+ //}
 
 // getTodaysMenu()

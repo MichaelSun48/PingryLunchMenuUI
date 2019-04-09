@@ -53,6 +53,7 @@ blockquote {
     /*top: 70em;*/
     position: relative;
     border-radius: 5px;
+    border-left: initial;
 }
 
     blockquote p {
