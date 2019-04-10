@@ -11,7 +11,7 @@ var apiKey = '8CwpHFmEngVsKou3F1HN6h4pTI9OjCB6yZn6vzFo'
 var url = "https://pingrytoday.pingry.org:3001/v1/lunch?api_key=8CwpHFmEngVsKou3F1HN6h4pTI9OjCB6yZn6vzFo"
 //Prints and returns today's lunch menu
 var todaysLunch = function(){
-  fetch("https://pingrytoday.pingry.org:3001/v1/lunch?api_key=8CwpHFmEngVsKou3F1HN6h4pTI9OjCB6yZn6vzFo").then(
+  fetch("https://pingrytoday.pingry.org:3001/v1/lunch?api_key=8CwpHFmEngVsKou3F1HN6h4pTI9OjCB6yZn6vzFo&date=" + formatTodaysDate()).then(
     (response) => response.json()
   ).then(result => {
     console.log("NOW")
@@ -124,11 +124,12 @@ var formatLunchMenu = function(lunchMenu){
   return fullMenu
 }
 console.log(todaysLunch())
-// var getTodaysMenu = () =>{
-//   todaysLunch().then((result)=>{
-//     var fullMenu = formatLunchMenu(result)
-//     return fullMenu
-//   });
-// }
+console.log(formatLunchMenu(todaysLunch()))
+ //var getTodaysMenu = () =>{
+ //  todaysLunch().then((result)=>{
+ //    var fullMenu = formatLunchMenu(result)
+ //    return fullMenu
+ //  });
+ //}
 
 // getTodaysMenu()

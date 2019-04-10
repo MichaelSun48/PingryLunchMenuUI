@@ -10,8 +10,9 @@ html {
 }
 
 body {
+    font-family: 'ABeeZee', sans-serif;
     overflow-x: hidden;
-    font-family: 'Open Sans', sans-serif;
+    /*font-family: 'Open Sans', sans-serif;*/
     margin: 0;
     /*background: linear-gradient(to left, #f58583, #ab67a2 47%, #5f54a2);*/
 }
@@ -48,8 +49,11 @@ h1, h2, h4 {
 
 blockquote {
     background: linear-gradient(to right,#fce4ed,#ffe8cc);
-    margin: auto 10% auto 17%;
+    margin: auto 10% auto calc(17% + 15px);
+    /*top: 70em;*/
     position: relative;
+    border-radius: 5px;
+    border-left: initial;
 }
 
     blockquote p {
@@ -58,6 +62,30 @@ blockquote {
         -webkit-text-fill-color: transparent;
         background-image: linear-gradient(to left, #777dff 33%, #f154ff 66%, #f0357c),linear-gradient(to right, #777dff 33%, #497ce2 66%, #37bdde );
     }
+
+#redyellow {
+    position: fixed;
+    background-image: linear-gradient(to bottom right, rgba(255, 0, 0, 0.2), rgba(255,255,0, 0.2));
+    background-image: linear-gradient(to bottom, rgba(255,193,131,0.6), rgba(191,103,162, 0.6) 47%, rgba(181,170,247, 0.6));
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+h1.hed {
+    background: url(imgs/gold2.jpg);
+    -webkit-background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+p.cursive {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5em;
+    font-weight: bold;
+}
 
 .row.content {
     height: 90em;
@@ -68,7 +96,8 @@ blockquote {
 }
 
 .well {
-    background-image: -webkit-linear-gradient(top,#f5f5f5,#f1f1f1);
+    /*background-image: -webkit-linear-gradient(top,#fAfAfA,#f1f1f1);*/
+    background-color: #fDfDfD;
     padding-top: 14px;
     padding-bottom: 26px;
     padding-left: 2em;
@@ -124,7 +153,7 @@ blockquote {
 }
 
     .jumbotron h1 {
-        color: green;
+        /*color: green;*/
     }
 
     .jumbotron p {
