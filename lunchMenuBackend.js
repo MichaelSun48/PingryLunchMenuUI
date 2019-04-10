@@ -20,7 +20,6 @@ var todaysLunch = function(){
   }).catch(ex => {
     console.error(ex);
   })
-
   // fetch("https://pingrytoday.pingry.org:3001/v1/lunch?api_key=8CwpHFmEngVsKou3F1HN6h4pTI9OjCB6yZn6vzFo").then((a)=>{console.log(a)})
 }
 
