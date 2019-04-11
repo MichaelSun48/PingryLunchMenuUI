@@ -11,17 +11,20 @@ var apiKey = '8CwpHFmEngVsKou3F1HN6h4pTI9OjCB6yZn6vzFo'
 var url = "https://pingrytoday.pingry.org:3001/v1/lunch?api_key=8CwpHFmEngVsKou3F1HN6h4pTI9OjCB6yZn6vzFo"
 //Prints and returns today's lunch menu
 var todaysLunch = function(){
-  fetch("https://pingrytoday.pingry.org:3001/v1/lunch?api_key=8CwpHFmEngVsKou3F1HN6h4pTI9OjCB6yZn6vzFo").then(
-    (response) => response.json()
-  ).then(result => {
-    console.log("NOW")
-    console.log(result)
-    return result
-  }).catch(ex => {
-    console.error(ex);
+  var promise = new Promise((resolve, reject)=>{
+    fetch("https://pingrytoday.pingry.org:3001/v1/lunch?api_key=8CwpHFmEngVsKou3F1HN6h4pTI9OjCB6yZn6vzFo&date=" + formatTodaysDate()).then(
+      (response) => {return response.json()}
+    ).then(result => {
+      if (result){
+        resolve(result)
+      }
+    }).catch(ex => {
+      reject(result)
+      console.error(ex);
+    })
   })
+  return promise
 
-  // fetch("https://pingrytoday.pingry.org:3001/v1/lunch?api_key=8CwpHFmEngVsKou3F1HN6h4pTI9OjCB6yZn6vzFo").then((a)=>{console.log(a)})
 }
 
 //Prints and returns the given date's lunch (Date must be in the following format: YYYYMMDD)
@@ -124,7 +127,19 @@ var formatLunchMenu = function(lunchMenu){
 
   return fullMenu
 }
-console.log(todaysLunch())
+var getTodaysMenu = () =>{
+  todaysLunch().then((result)=>{
+    var fullMenu = formatLunchMenu(result)
+    return fullMenu
+  });
+}
+
+getTodaysMenu()
+
+
+// console.log(x);
+
+// console.log(formatLunchMenu(todaysLunch()))
  //var getTodaysMenu = () =>{
  //  todaysLunch().then((result)=>{
  //    var fullMenu = formatLunchMenu(result)
