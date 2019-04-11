@@ -97,11 +97,12 @@ p.cursive {
 
 .well {
     /*background-image: -webkit-linear-gradient(top,#fAfAfA,#f1f1f1);*/
-    background-color: #fDfDfD;
+    background-color: #ececec;
     padding-top: 14px;
     padding-bottom: 26px;
     padding-left: 2em;
-    /*background-image: linear-gradient(rgba(156,39,176,.2),#fff);*/
+    background-image: linear-gradient(rgba(156,39,176,.2), #ececec);
+    border: none;
 }
 
     .well p {

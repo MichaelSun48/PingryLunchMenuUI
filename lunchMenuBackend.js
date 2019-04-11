@@ -132,7 +132,7 @@ var formatLunchMenu = function (lunchMenu) {
     console.log(desert)
     console.log("----------------------------")
 
-    fullMenu = [breakfast, soups, hotLunch, hotLunch2, rightStation, panini, saladbar]
+    fullMenu = [breakfast, soups, hotLunch, hotLunch2, rightStation, panini, saladbar, pasta, desert]
     return fullMenu
 }
 var getTodaysMenu = () => {
@@ -155,6 +155,16 @@ var getTodaysMenu = () => {
             para.appendChild(node);
             soup.appendChild(para);
         }
+
+        //pasta
+        var soup = document.getElementById("pasta");
+        var stuff = fullMenu[7]
+        for (var i = 1; i < stuff.length; i++) {
+            var para = document.createElement("li");
+            var node = document.createTextNode(stuff[i]);
+            para.appendChild(node);
+            soup.appendChild(para);
+        }
        
         //panini
         var panini = document.getElementById("Panini");
@@ -164,6 +174,46 @@ var getTodaysMenu = () => {
             var node = document.createTextNode(pan[i]);
             para.appendChild(node);
             panini.appendChild(para);
+        }
+
+        //desert
+        var d = document.getElementById("desert");
+        var des = fullMenu[8]
+        for (var i = 0; i < des.length; i++) {
+            var para = document.createElement("li");
+            var node = document.createTextNode(des[i]);
+            para.appendChild(node);
+            d.appendChild(para);
+        }
+
+        //salad
+        var d = document.getElementById("salad");
+        var des = fullMenu[6]
+        for (var i = 0; i < des.length; i++) {
+            var para = document.createElement("li");
+            var node = document.createTextNode(des[i]);
+            para.appendChild(node);
+            d.appendChild(para);
+        }
+
+        //main ingrediant
+        var d = document.getElementById("MI");
+        var des = fullMenu[3]
+        for (var i = 0; i < des.length; i++) {
+            var para = document.createElement("li");
+            var node = document.createTextNode(des[i]);
+            para.appendChild(node);
+            d.appendChild(para);
+        }
+
+        //main ingrediant
+        var d = document.getElementById("MI2");
+        var des = fullMenu[2]
+        for (var i = 0; i < des.length; i++) {
+            var para = document.createElement("li");
+            var node = document.createTextNode(des[i]);
+            para.appendChild(node);
+            d.appendChild(para);
         }
 
         return fullMenu
