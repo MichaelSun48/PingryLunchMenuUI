@@ -44,6 +44,7 @@ i {
 
 h1, h2, h3, h4 {
     color: black;
+    font-family: 'ABeeZee', sans-serif;
     margin-bottom: 1.2vh;
 }
 
@@ -87,8 +88,8 @@ p.cursive {
     font-weight: bold;
 }
 
-.row.content {
-    height: 90em;
+.row.content { /*VERY VERY IMPORTANT*/
+    height: 91em;
 }
 
 .center {
@@ -101,7 +102,7 @@ p.cursive {
     padding-top: 14px;
     padding-bottom: 26px;
     padding-left: 2em;
-    background-image: linear-gradient(rgba(156,39,176,.2), #ececec);
+    background-image: linear-gradient(to top, rgba(156,39,176,.2), #fff2f2);
     border: none;
 }
 
