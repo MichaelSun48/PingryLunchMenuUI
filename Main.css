@@ -69,7 +69,7 @@ blockquote {
     position: fixed;
     /*background-image: linear-gradient(to bottom right, rgba(255, 0, 0, 0.2), rgba(255,255,0, 0.2));*/
     background-image: linear-gradient(to bottom, rgba(255,193,131,0.6), rgba(191,103,162, 0.6) 47%, rgba(181,170,247, 0.6));
-    background-image: linear-gradient(150deg, #e0dbdb, #1d316f 37%, #030348);
+    background-image: linear-gradient(159deg, #fdb2b2, #1d316f 37%, #030348);
     height: 100%;
     width: 100%;
     left: 0;
@@ -169,6 +169,7 @@ p.cursive {
     border: none;
     box-shadow: none;
     margin: 0px auto 0px auto;
+    color: #7f99ff;
 }
 
 .row-2 {
