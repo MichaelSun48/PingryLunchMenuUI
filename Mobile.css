@@ -30,8 +30,19 @@ h1, h2, h3, h4 {
     margin-left: 10%;
 }
 
+#redyellow {
+    position: fixed;
+    /*background-image: linear-gradient(to bottom right, rgba(255, 0, 0, 0.2), rgba(255,255,0, 0.2));*/
+    background-image: linear-gradient(159deg, #5277e7 57%, #3030a0);
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
 .row.content {
-    height: 140em;
+    height: 180em;
 }
 
 .sidenav{
@@ -59,7 +70,7 @@ h1, h2, h3, h4 {
 
 blockquote {
     background: linear-gradient(to right,#fce4ed,#ffe8cc),;
-    margin: auto 10% 100px 10%;
+    margin: 3em 10% 100px 10%;
     position: relative;
     border-radius: 10px;
     border-left: initial;
